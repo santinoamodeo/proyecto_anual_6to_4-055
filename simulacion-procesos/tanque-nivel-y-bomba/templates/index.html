@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de Bomba</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body 
+    data-bomba="{{ 'true' if bomba_encendida else 'false' }}" 
+    data-tiempo="{{ tiempo_bomba }}"
+>
+    <div class="container">
+        <h1>Simulador de Control de Bomba</h1>
+
+        <div class="tank">
+            <div class="liquid" id="liquid"></div>
+        </div>
+
+        <div class="buttons">
+            <a href="/bomba_on" class="btn btn-on">Encender Bomba</a>
+            <a href="/bomba_off" class="btn btn-off">Apagar Bomba</a>
+        </div>
+
+        <div class="tiempo">
+            <h2>Tiempo de bomba encendida:</h2>
+            <p id="tiempoBomba">{{ tiempo_bomba }}</p>
+        </div>
+    </div>
+</body>
+</html>

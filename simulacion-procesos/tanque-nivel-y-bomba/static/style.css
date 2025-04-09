@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.tank {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    border: 4px solid #3498db;
+    border-radius: 20px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    background: #ecf0f1;
+    box-shadow: 0 0 0 transparent;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.tank.active {
+    box-shadow: 0 0 20px #3498db, 0 0 40px #3498db inset;
+}
+
+.liquid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    height: 0%;
+    border-radius: 0 0 20px 20px;
+    transition: height 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: rise 4s infinite ease-in;
+    opacity: 0.7;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-300px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+.buttons {
+    margin: 20px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.btn-on {
+    background-color: #27ae60;
+}
+
+.btn-on:hover {
+    background-color: #2ecc71;
+}
+
+.btn-off {
+    background-color: #c0392b;
+}
+
+.btn-off:hover {
+    background-color: #e74c3c;
+}
+
+.tiempo {
+    margin-top: 20px;
+}
+
+#tiempoBomba {
+    font-size: 24px;
+    font-weight: bold;
+    color: #34495e;
+}
